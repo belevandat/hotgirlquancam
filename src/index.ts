@@ -1,8 +1,11 @@
 import { Platform } from "react-native";
 
-function isSimulator() {
+export interface Config {
+  location?: string;
+}
+function isSimulator({ location }: Config): boolean {
   // Yeah it's fucking wrong
-  return Platform.OS === "ios";
+  return Platform.OS === "ios" && location === "Quan Cam";
 }
 
 export default isSimulator;
